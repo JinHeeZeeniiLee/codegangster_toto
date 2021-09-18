@@ -2,9 +2,11 @@ import React from 'react';
 import {useState} from 'react';
 import './MakeTodo.css';
 import dummyTodos from '../static/dummyData';
+
 import DatePicker, {registerLocale, rergisterLocale,setDefaultLocale} from "react-datepicker"
 import ko from 'date-fns/locale/ko'
 registerLocale('ko', ko)
+
 
 
 
@@ -13,8 +15,12 @@ const MakeTodo = () => {
     const[message, setMessage] = useState("")
     const[todoList, settodoList] = useState([...dummyTodos]);
     
+  
+  const [startDate, setStartDate] = useState(new Date());
 
 const addTodoClick = (event) => {
+    console.log("확인")
+  
     const todo = {};
     todo.id = 6;
     todo.d_day = 10;
@@ -46,7 +52,6 @@ const Calendar = () => {
     )
 }
 
-
     return (
         <div>
         <Calendar />
@@ -62,6 +67,8 @@ const Calendar = () => {
         <button 
         className = "MakeTodo_submit"
         onclick = {addTodoClick}>할일 추가
+
+        
         </button>
 
         </div>
