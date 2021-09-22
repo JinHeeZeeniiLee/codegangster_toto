@@ -17,6 +17,7 @@ function App() {
 
   const handleClear = () => {
     setIsClear(true);
+    setDatas([]);
   };
 
   return (
@@ -25,12 +26,12 @@ function App() {
         <main>
           <Header />
           <Filterbar datas={datas} setDatas={setDatas} />
-          <MakeTodo />
-          <CountClear isClear={isClear} handleClear={handleClear} />
+          <MakeTodo datas={datas} setDatas={setDatas} />
+          <CountClear datas={datas} setDatas={setDatas} isClear={isClear} handleClear={handleClear} />
+          <div className="listPart">
+            <ContentTodo datas={datas} setDatas={setDatas} />
+          </div>
         </main>
-        <content>
-          <ContentTodo />
-        </content>
         <Footer />
       </div>
     </BrowserRouter>
