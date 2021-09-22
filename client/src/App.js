@@ -28,10 +28,17 @@ function App() {
           <Filterbar datas={datas} setDatas={setDatas} />
           <MakeTodo datas={datas} setDatas={setDatas} />
           <CountClear datas={datas} setDatas={setDatas} isClear={isClear} handleClear={handleClear} />
+<<<<<<< HEAD
           <div className="listPart">
             <ContentTodo datas={datas} setDatas={setDatas} />
           </div>
         </main>
+=======
+        </main>
+        <div className="rightPart">
+          <ContentTodo datas={datas} setDatas={setDatas} />
+        </div>
+>>>>>>> main
         <Footer />
       </div>
     </BrowserRouter>

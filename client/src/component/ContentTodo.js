@@ -11,6 +11,7 @@ const ContentTodo = ({ datas, setDatas }) => {
         })
         setDatas(filterTodo);
     };
+
     return (
         <div className="todo_Container">
             <ul className="todoLists">
