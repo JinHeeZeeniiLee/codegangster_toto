@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
+
 
 import Footer from '../Footer';
 
@@ -19,6 +21,7 @@ const Login = ({}) => {
           <i class="fas fa-unlock-alt"></i>
           <input className="password" type="password" />
         </div>
+
         <Link to="/" style={{ textDecoration: 'none' }}>
           <div className="loginTodolist__BtnContainer">
             <button className="loginBtn">Login</button>
@@ -29,6 +32,7 @@ const Login = ({}) => {
             <button className="singUpBtn">Sign Up</button>
           </div>
         </Link>
+
       </div>
       <div className="footer">
         <Footer />
