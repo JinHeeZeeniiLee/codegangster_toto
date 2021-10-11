@@ -25,6 +25,7 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+
   useEffect(() => {
     issueTokens();
   }, []);
@@ -36,6 +37,7 @@ function App() {
   const logoutHandler = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/logout`, { withCredentials: true })
+
       .then((res) => {
         setUserInfo({});
         setIsLogin(false);

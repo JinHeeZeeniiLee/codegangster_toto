@@ -22,10 +22,10 @@ app.use(
 );
 app.use(cookieParser());
 app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 // app.get('/accesstokenrequest', controllers.accessTokenRequest);
 // app.get('/refreshtokenrequest', controllers.refreshTokenRequest);
-app.get('/tokenRequest', controllers.tokenRequest);
+app.get('/tokenrequest', controllers.tokenRequest);
 
 app.post('/getTodos', controllers.todo.get);
 app.post('/todos', controllers.todo.post);
@@ -36,7 +36,9 @@ app.post('/signup', controllers.signup);
 app.post('/login', controllers.login);
 app.get('/logout', controllers.logout);
 
+
 const HTTPS_PORT = 443;
+
 
 // if (fs.existsSync('./key.pem') && fs.existsSync('./cert.pem')) {
 //   const privateKey = fs.readFileSync(__dirname + '/key.pem', 'utf8');

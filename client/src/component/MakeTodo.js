@@ -20,6 +20,7 @@ const MakeTodo = ({ datas, setDatas, userInfo }) => {
   const addTodoClick = (event) => {
     axios
       .post(`${process.env.REACT_APP_API_URL}/todos`, {
+
         userId: userInfo.userId,
         todo: message,
         d_day: startDate

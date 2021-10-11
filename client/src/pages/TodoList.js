@@ -14,7 +14,9 @@ const TodoList = ({ userInfo, logoutHandler }) => {
 
   useEffect(() => {
     axios
+
       .post(`${process.env.REACT_APP_API_URL}/getTodos`, { id: userInfo.id })
+
       .then((res) => setDatas(res.data))
       .catch((err) => console.log(err));
   }, []);
