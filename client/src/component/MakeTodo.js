@@ -2,8 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import './MakeTodo.css';
 // import ContentTodo from "./ContentTodo";
-// import dummyTodos from "../static/dummyData";
-import shortid from 'shortid';
 import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import ko from 'date-fns/locale/ko';
@@ -21,7 +19,8 @@ const MakeTodo = ({ datas, setDatas, userInfo }) => {
   // const result = Math.ceil(gap / (1000 * 60 * 60 * 24));
   const addTodoClick = (event) => {
     axios
-      .post('https://localhost:4000/todos', {
+      .post(`${process.env.REACT_APP_API_URL}/todos`, {
+
         userId: userInfo.userId,
         todo: message,
         d_day: startDate

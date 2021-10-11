@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
@@ -24,7 +25,7 @@ const SingUp = () => {
 
   const onSubmit = (data) => {
     axios
-      .post('https://localhost:4000/signup', {
+      .post(`${process.env.REACT_APP_API_URL}/signup`, {
         userId: data.userId,
         password: data.password,
         email: data.email
@@ -33,10 +34,6 @@ const SingUp = () => {
         history.push('/');
       })
       .catch((err) => alert('중복된 ID 입니다.'));
-  };
-
-  const handleError = (e) => {
-    console.log(errors);
   };
 
   useEffect(() => {
@@ -125,6 +122,7 @@ const SingUp = () => {
               className="validation__check__msg"
               onKeyUp={handleError}
             >
+
               * 아이디는 소문자, 숫자 4~20글자여야 합니다.
             </div>
           )}
@@ -147,6 +145,7 @@ const SingUp = () => {
             </div>
           )}
           {!isVerified ? (
+
             <div
               name="passwordNotMatch_err"
               className="validation__check__msg"
